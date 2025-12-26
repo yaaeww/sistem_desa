@@ -1,0 +1,16 @@
+/* Card Component Variations */
+.card.hover:transform:hover {
+  transform: translateY(-1px);
+}
+
+.card.hover:transform:hover.hover\:shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
+
+.card.border {
+  border: 2px solid var(--light-gray);
+}
+
+.card.border.border-gray-200 {
+  border-color: var(--light-gray);
+}

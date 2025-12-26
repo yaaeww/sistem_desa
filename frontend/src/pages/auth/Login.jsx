@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaUser, FaLock, FaEnvelope, FaHome } from 'react-icons/fa';
-import Navbar from '../components/Layout/Navbar';
+import Navbar from '../../components/Layout/Navbar';
 
 const Login = () => {
   const [formData, setFormData] = useState({

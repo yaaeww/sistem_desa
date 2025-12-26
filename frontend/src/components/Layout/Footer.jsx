@@ -49,7 +49,7 @@ const Footer = () => {
               <div className="contact-item">
                 <FaMapMarkerAlt className="contact-icon" />
                 <span>
-                  Jl. Desa Bojongslawi No. 123, Kecamatan Cibiru, Kota Bandung
+                Jl pintu air no 12 kode pos 45252, Legok, Kec. Lohbener, Kabupaten Indramayu, Jawa Barat
                 </span>
               </div>
               <div className="contact-item">
@@ -89,7 +89,7 @@ const Footer = () => {
               </div>
               <div className="hour-item">
                 <FaClock className="hour-icon" />
-                <div>
+                <div class>
                   <strong>Minggu & Libur</strong>
                   <span>Tutup</span>
                 </div>
@@ -128,8 +128,7 @@ const Footer = () => {
             reserved.
           </p>
           <p className="footer-address">
-            RT 01/RW 05, Desa Bojongslawi, Kecamatan Cibiru, Kota Bandung, Jawa
-            Barat 40614
+            Kecamatan.Lohbener , Kabupaten.Indramayu , Provinsi Jawa Barat
           </p>
         </div>
       </div>

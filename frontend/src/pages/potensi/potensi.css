@@ -1,0 +1,2406 @@
+/* ===== POTENSI PAGE STYLES - TIDAK BENTROK DENGAN GLOBAL ===== */
+.potensi-page-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(
+    180deg,
+    var(--bg-secondary) 0%,
+    var(--bg-primary) 100%
+  );
+}
+
+/* Hero Section */
+.potensi-hero-section {
+  background: var(--gradient-hero);
+  color: white;
+  padding: 4rem 0 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.potensi-hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-overlay);
+  z-index: 1;
+}
+
+.potensi-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.potensi-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: potensiFadeInDown 0.8s ease-out;
+}
+
+.potensi-hero-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  color: white;
+  animation: potensiFadeInUp 0.8s ease-out 0.2s both;
+}
+
+.potensi-hero-title .highlight {
+  color: var(--accent-light);
+}
+
+.potensi-hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: potensiFadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* Search Container */
+.potensi-search-container {
+  max-width: 800px;
+  margin: 2rem auto 0;
+  padding: 0 1.5rem;
+}
+
+.potensi-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-xl);
+  padding: 0.5rem 1rem;
+  transition: all var(--transition-base);
+}
+
+.potensi-search-wrapper:focus-within {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: var(--shadow-glow);
+}
+
+.potensi-search-icon {
+  color: white;
+  font-size: 1.125rem;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.potensi-search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  padding: 0.75rem 0;
+  outline: none;
+  min-width: 0;
+}
+
+.potensi-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.potensi-search-wrapper .btn {
+  margin-left: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.potensi-search-wrapper .btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Main Content Layout */
+.potensi-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .potensi-layout {
+    flex-direction: row;
+  }
+}
+
+/* Sidebar */
+.potensi-sidebar {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .potensi-sidebar {
+    width: 280px;
+    flex-shrink: 0;
+  }
+}
+
+/* Sidebar Card */
+.potensi-sidebar-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--light-gray);
+  transition: all var(--transition-base);
+}
+
+.potensi-sidebar-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-lg);
+}
+
+.potensi-sidebar-header {
+  margin-bottom: 1.5rem;
+}
+
+.potensi-sidebar-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--dark-color);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Category Filters */
+.potensi-category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.potensi-category-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border: 2px solid var(--light-gray);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-align: left;
+  width: 100%;
+  border: none;
+}
+
+.potensi-category-item:hover {
+  border-color: var(--primary-color);
+  background: white;
+  transform: translateX(5px);
+}
+
+.potensi-category-item.active {
+  background: var(--gradient-primary);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+.potensi-category-item.active .potensi-category-icon,
+.potensi-category-item.active .potensi-category-label,
+.potensi-category-item.active .potensi-category-count {
+  color: white;
+}
+
+.potensi-category-icon {
+  font-size: 1.125rem;
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+.potensi-category-label {
+  flex: 1;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.potensi-category-count {
+  background: var(--light-gray);
+  color: var(--gray-color);
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.potensi-category-item.active .potensi-category-count {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Stats Info */
+.potensi-stats-info {
+  margin-top: 2rem;
+}
+
+.potensi-stats-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.125rem;
+  color: var(--dark-color);
+  margin-bottom: 1rem;
+}
+
+.potensi-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.potensi-stat-item {
+  text-align: center;
+  padding: 0.75rem;
+  background: var(--bg-accent);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--light-gray);
+}
+
+.potensi-stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+}
+
+.potensi-stat-label {
+  font-size: 0.75rem;
+  color: var(--gray-color);
+}
+
+/* Popular Info */
+.potensi-popular-info {
+  margin-top: 2rem;
+}
+
+.potensi-popular-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.125rem;
+  color: var(--dark-color);
+  margin-bottom: 1rem;
+}
+
+.potensi-popular-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.potensi-popular-item {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: inherit;
+  transition: background var(--transition-base);
+  align-items: center;
+}
+
+.potensi-popular-item:hover {
+  background: var(--bg-secondary);
+}
+
+.potensi-popular-image {
+  width: 60px;
+  height: 45px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.potensi-popular-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.potensi-popular-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.potensi-popular-content h5 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--dark-color);
+  margin-bottom: 0.25rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+}
+
+.potensi-popular-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.potensi-popular-rating svg {
+  color: var(--warning-color);
+}
+
+/* Main Content Area */
+.potensi-main-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.potensi-content-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .potensi-content-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.potensi-header-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+  color: var(--dark-color);
+}
+
+.potensi-header-info p {
+  color: var(--gray-color);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Potensi Grid */
+.potensi-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+  .potensi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .potensi-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Potensi Card */
+.potensi-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--light-gray);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.potensi-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary-color);
+}
+
+.potensi-card-image-wrapper {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.potensi-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.potensi-card:hover .potensi-card-image {
+  transform: scale(1.05);
+}
+
+.potensi-card-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.potensi-placeholder-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  opacity: 0.5;
+}
+
+.potensi-card-category {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+}
+
+.potensi-category-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.potensi-card-rating {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-full);
+}
+
+.potensi-card-rating svg {
+  color: var(--warning-color);
+  font-size: 0.75rem;
+}
+
+.potensi-bookmark-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-color);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  border: none;
+}
+
+.potensi-bookmark-btn:hover {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.potensi-card-content {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.potensi-card-title {
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+  color: var(--dark-color);
+  line-height: 1.4;
+  flex: 1;
+}
+
+.potensi-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.875rem;
+  font-size: 0.8rem;
+}
+
+.potensi-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: var(--gray-color);
+}
+
+.potensi-card-description {
+  color: var(--gray-color);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.potensi-card-products {
+  margin-bottom: 1rem;
+}
+
+.potensi-products-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--dark-color);
+  margin-bottom: 0.25rem;
+}
+
+.potensi-products-list {
+  color: var(--gray-color);
+  font-size: 0.85rem;
+}
+
+.potensi-card-price {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.potensi-price-label {
+  font-size: 0.85rem;
+  color: var(--gray-color);
+}
+
+.potensi-price-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.potensi-card-tags {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.potensi-card-tags svg {
+  color: var(--gray-color);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.potensi-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.potensi-tag {
+  padding: 0.25rem 0.5rem;
+  background: var(--bg-secondary);
+  color: var(--gray-color);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+.potensi-tag:hover {
+  background: var(--light-gray);
+  color: var(--dark-color);
+}
+
+.potensi-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--light-gray);
+}
+
+.potensi-read-more-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all var(--transition-base);
+}
+
+.potensi-read-more-btn:hover {
+  color: var(--secondary-color);
+  gap: 0.625rem;
+}
+
+.potensi-card-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.potensi-action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--light-gray);
+  background: transparent;
+  color: var(--gray-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+  border: none;
+  flex-shrink: 0;
+}
+
+.potensi-action-btn:hover {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* Featured Section */
+.potensi-featured-section,
+.potensi-craft-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--light-gray);
+}
+
+.potensi-section-header {
+  margin-bottom: 1.5rem;
+}
+
+.potensi-section-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--dark-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.potensi-section-subtitle {
+  color: var(--gray-color);
+  font-size: 0.95rem;
+}
+
+.potensi-featured-grid,
+.potensi-craft-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .potensi-featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .potensi-craft-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .potensi-craft-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.potensi-featured-card {
+  padding: 1.5rem;
+  background: var(--gradient-light);
+  border-radius: var(--radius-xl);
+  border: 2px solid var(--light-gray);
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.potensi-featured-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.potensi-featured-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.875rem;
+  background: var(--gradient-primary);
+  color: white;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.potensi-featured-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--dark-color);
+}
+
+.potensi-featured-description {
+  color: var(--gray-color);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.potensi-featured-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.potensi-featured-info .potensi-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--gray-color);
+}
+
+/* Craft Section */
+.potensi-craft-card {
+  padding: 1.25rem;
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--light-gray);
+  transition: all var(--transition-base);
+}
+
+.potensi-craft-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--warning-color);
+}
+
+.potensi-craft-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.potensi-craft-icon {
+  width: 45px;
+  height: 45px;
+  background: rgba(245, 158, 11, 0.1);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--warning-color);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.potensi-craft-title {
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+  color: var(--dark-color);
+}
+
+.potensi-craft-owner {
+  font-size: 0.8rem;
+  color: var(--gray-color);
+  margin: 0;
+}
+
+.potensi-craft-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.potensi-craft-details .potensi-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--gray-color);
+}
+
+.potensi-craft-details .potensi-detail-item svg {
+  color: var(--warning-color);
+  font-size: 0.875rem;
+}
+
+/* CTA Section */
+.potensi-cta-section {
+  padding: 4rem 0;
+  background: var(--gradient-primary);
+  color: white;
+  margin-top: 3rem;
+}
+
+.potensi-cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.potensi-cta-title {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.potensi-cta-text {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.potensi-cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.potensi-cta-buttons .btn {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* Loading States */
+.potensi-loading-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .potensi-loading-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .potensi-loading-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.potensi-loading-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--light-gray);
+  overflow: hidden;
+  animation: potensiPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.potensi-loading-image {
+  height: 180px;
+  background: var(--light-gray);
+}
+
+.potensi-loading-content {
+  padding: 1.25rem;
+}
+
+.potensi-loading-title {
+  height: 20px;
+  background: var(--light-gray);
+  border-radius: var(--radius-sm);
+  margin-bottom: 1rem;
+  width: 70%;
+}
+
+.potensi-loading-text {
+  height: 14px;
+  background: var(--light-gray);
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.75rem;
+  width: 90%;
+}
+
+.potensi-loading-text:last-child {
+  width: 80%;
+}
+
+/* Empty State */
+.potensi-empty-state {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--light-gray);
+}
+
+.potensi-empty-content {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.potensi-empty-icon {
+  font-size: 3rem;
+  color: var(--light-gray);
+  margin-bottom: 1rem;
+}
+
+.potensi-empty-title {
+  font-size: 1.25rem;
+  color: var(--dark-color);
+  margin-bottom: 0.75rem;
+}
+
+.potensi-empty-text {
+  color: var(--gray-color);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* Kategori Color Classes */
+.potensi-kategori-green {
+  background-color: rgba(209, 250, 229, 0.5);
+  color: #065f46;
+}
+
+.potensi-kategori-yellow {
+  background-color: rgba(254, 243, 199, 0.5);
+  color: #92400e;
+}
+
+.potensi-kategori-blue {
+  background-color: rgba(219, 234, 254, 0.5);
+  color: #1e40af;
+}
+
+.potensi-kategori-red {
+  background-color: rgba(254, 226, 226, 0.5);
+  color: #991b1b;
+}
+
+.potensi-kategori-cyan {
+  background-color: rgba(207, 250, 254, 0.5);
+  color: #155e75;
+}
+
+.potensi-kategori-purple {
+  background-color: rgba(243, 232, 255, 0.5);
+  color: #5b21b6;
+}
+
+.potensi-kategori-orange {
+  background-color: rgba(255, 237, 213, 0.5);
+  color: #9a3412;
+}
+
+.potensi-kategori-gray {
+  background-color: rgba(243, 244, 246, 0.5);
+  color: #1f2937;
+}
+
+/* Utility Classes */
+.btn-warning {
+  background: var(--gradient-accent);
+  color: white;
+  border: none;
+}
+
+.btn-warning:hover {
+  background: var(--warning-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow-accent);
+}
+
+/* Animations */
+@keyframes potensiFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes potensiFadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes potensiPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .potensi-hero-section {
+    padding: 3rem 0 2rem;
+  }
+
+  .potensi-hero-title {
+    font-size: 1.5rem;
+  }
+
+  .potensi-hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .potensi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .potensi-featured-grid,
+  .potensi-craft-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .potensi-cta-buttons {
+    flex-direction: column;
+  }
+
+  .potensi-cta-buttons .btn {
+    width: 100%;
+  }
+}
+
+/* ===== DETAIL POTENSI PAGE STYLES ===== */
+.potensi-detail-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(
+    180deg,
+    var(--bg-secondary) 0%,
+    var(--bg-primary) 100%
+  );
+}
+
+.potensi-detail-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Loading States */
+.potensi-detail-loading {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  animation: potensiFadeIn 0.3s ease;
+}
+
+.potensi-detail-loading-image {
+  width: 100%;
+  height: 400px;
+  background: var(--light-gray);
+  border-radius: var(--radius-xl);
+  animation: potensiPulse 2s infinite;
+}
+
+.potensi-detail-loading-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.potensi-detail-loading-title {
+  height: 40px;
+  width: 70%;
+  background: var(--light-gray);
+  border-radius: var(--radius-md);
+  animation: potensiPulse 2s infinite 0.2s;
+}
+
+.potensi-detail-loading-meta {
+  height: 24px;
+  width: 50%;
+  background: var(--light-gray);
+  border-radius: var(--radius-md);
+  animation: potensiPulse 2s infinite 0.4s;
+}
+
+.potensi-detail-loading-text {
+  height: 16px;
+  width: 100%;
+  background: var(--light-gray);
+  border-radius: var(--radius-md);
+  animation: potensiPulse 2s infinite 0.6s;
+}
+
+.potensi-detail-loading-text:nth-child(2) {
+  width: 90%;
+}
+
+.potensi-detail-loading-text:nth-child(3) {
+  width: 85%;
+}
+
+/* Empty State */
+.potensi-detail-empty-state {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 3rem 2rem;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--light-gray);
+  text-align: center;
+}
+
+.potensi-detail-empty-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.potensi-detail-empty-icon {
+  font-size: 4rem;
+  color: var(--gray-color);
+  margin-bottom: 1rem;
+}
+
+.potensi-detail-empty-title {
+  font-size: 1.5rem;
+  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+}
+
+.potensi-detail-empty-text {
+  color: var(--gray-color);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Breadcrumb */
+.potensi-detail-breadcrumb-container {
+  background: white;
+  border-bottom: 2px solid var(--light-gray);
+}
+
+.potensi-detail-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.potensi-detail-breadcrumb-item {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.potensi-detail-breadcrumb-item:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+.potensi-detail-breadcrumb-separator {
+  color: var(--gray-color);
+}
+
+.potensi-detail-breadcrumb-active {
+  color: var(--gray-color);
+  pointer-events: none;
+}
+
+/* Layout */
+.potensi-detail-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .potensi-detail-layout {
+    flex-direction: row;
+  }
+}
+
+.potensi-detail-content-main {
+  flex: 1;
+}
+
+.potensi-detail-sidebar {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .potensi-detail-sidebar {
+    width: 350px;
+    flex-shrink: 0;
+  }
+}
+
+/* Header */
+.potensi-detail-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .potensi-detail-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.potensi-detail-header-left {
+  flex: 1;
+}
+
+.potensi-detail-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.3;
+  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+}
+
+.potensi-detail-header-right {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Rating Stars */
+.potensi-rating-stars {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.potensi-star-full {
+  color: #fbbf24;
+  fill: currentColor;
+}
+
+.potensi-star-half {
+  color: #fbbf24;
+  fill: url(#half-gradient);
+}
+
+.potensi-star-empty {
+  color: #d1d5db;
+  fill: currentColor;
+}
+
+.potensi-rating-number {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  color: var(--dark-color);
+}
+
+.potensi-review-count {
+  font-size: 0.875rem;
+  color: var(--gray-color);
+  margin-left: 0.25rem;
+}
+
+/* Buttons */
+.potensi-detail-bookmark-btn,
+.potensi-detail-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  border: 2px solid var(--light-gray);
+  background: white;
+  color: var(--gray-color);
+}
+
+.potensi-detail-bookmark-btn:hover,
+.potensi-detail-share-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.potensi-detail-bookmark-btn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.potensi-detail-bookmark-active {
+  background: var(--primary-color);
+  color: white !important;
+  border-color: var(--primary-color);
+}
+
+.potensi-detail-bookmark-active:hover {
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.potensi-detail-share-btn:hover {
+  border-color: var(--dark-color);
+  color: var(--dark-color);
+}
+
+/* Image Gallery */
+.potensi-detail-image-gallery {
+  margin-bottom: 2rem;
+}
+
+.potensi-detail-main-image {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-md);
+}
+
+.potensi-detail-gallery-main {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.potensi-detail-gallery-main:hover {
+  transform: scale(1.02);
+}
+
+.potensi-detail-image-overlay {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+}
+
+.potensi-detail-overlay-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid var(--primary-color);
+  border-radius: var(--radius-full);
+  color: var(--primary-color);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  backdrop-filter: blur(10px);
+}
+
+.potensi-detail-overlay-btn:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.potensi-detail-thumbnail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 0.75rem;
+}
+
+.potensi-detail-thumbnail {
+  width: 100%;
+  height: 80px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 2px solid var(--light-gray);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  padding: 0;
+  background: none;
+}
+
+.potensi-detail-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.potensi-detail-thumbnail:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.potensi-detail-thumbnail-active {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1);
+}
+
+/* Quick Info */
+.potensi-detail-quick-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--light-gray);
+}
+
+@media (min-width: 768px) {
+  .potensi-detail-quick-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .potensi-detail-quick-info {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.potensi-detail-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.potensi-detail-info-item svg {
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.potensi-detail-info-item strong {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--gray-color);
+  margin-bottom: 0.25rem;
+}
+
+.potensi-detail-info-item p {
+  font-size: 0.95rem;
+  color: var(--dark-color);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.potensi-detail-price {
+  color: var(--primary-color) !important;
+  font-weight: 600;
+  font-size: 1rem !important;
+}
+
+/* Sections */
+.potensi-detail-description-section,
+.potensi-detail-facilities-section {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--light-gray);
+}
+
+.potensi-detail-section-title {
+  font-size: 1.25rem;
+  color: var(--dark-color);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--light-gray);
+}
+
+/* Description Content */
+.potensi-detail-description-content {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--dark-color);
+}
+
+.potensi-detail-description-content h2 {
+  font-size: 1.5rem;
+  margin: 1.5rem 0 1rem;
+  color: var(--dark-color);
+}
+
+.potensi-detail-description-content h3 {
+  font-size: 1.25rem;
+  margin: 1.25rem 0 0.75rem;
+  color: var(--dark-color);
+}
+
+.potensi-detail-description-content p {
+  margin-bottom: 1rem;
+}
+
+.potensi-detail-description-content ul,
+.potensi-detail-description-content ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.potensi-detail-description-content li {
+  margin-bottom: 0.5rem;
+}
+
+.potensi-detail-description-content strong {
+  color: var(--dark-color);
+}
+
+/* Excellence Grid in Description */
+.potensi-excellence-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+@media (min-width: 768px) {
+  .potensi-excellence-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.potensi-excellence-item {
+  padding: 1.25rem;
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--light-gray);
+}
+
+.potensi-excellence-item strong {
+  display: block;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.potensi-excellence-item p {
+  color: var(--gray-color);
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Alerts in Description */
+.potensi-alert-success {
+  padding: 1.25rem 1.5rem;
+  background: rgba(34, 197, 94, 0.1);
+  border-left: 4px solid var(--success-color);
+  border-radius: var(--radius-lg);
+  margin: 1.5rem 0;
+  color: #166534;
+}
+
+.potensi-alert-success strong {
+  color: inherit;
+}
+
+/* Facilities Grid */
+.potensi-detail-facilities-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .potensi-detail-facilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .potensi-detail-facilities-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.potensi-detail-facility-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--light-gray);
+  transition: all var(--transition-base);
+}
+
+.potensi-detail-facility-item:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.potensi-detail-facility-icon {
+  width: 30px;
+  height: 30px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.potensi-detail-facility-item span {
+  color: var(--dark-color);
+  font-size: 0.95rem;
+}
+
+/* Additional Info */
+.potensi-detail-additional-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.potensi-detail-info-section {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--light-gray);
+}
+
+.potensi-detail-info-title {
+  font-size: 1.125rem;
+  color: var(--dark-color);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--light-gray);
+}
+
+/* Info Grid */
+.potensi-detail-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .potensi-detail-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.potensi-detail-info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.potensi-detail-info-item:last-child {
+  border-bottom: none;
+}
+
+.potensi-detail-info-item strong {
+  color: var(--gray-color);
+  font-weight: 500;
+}
+
+.potensi-detail-info-item span {
+  color: var(--dark-color);
+  font-weight: 600;
+}
+
+/* Contact Buttons */
+.potensi-detail-contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Social Media */
+.potensi-detail-social-media {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--light-gray);
+}
+
+.potensi-detail-social-title {
+  font-size: 1rem;
+  color: var(--gray-color);
+  margin-bottom: 1rem;
+}
+
+.potensi-detail-social-buttons {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.potensi-detail-social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  transition: all var(--transition-base);
+}
+
+.potensi-detail-social-facebook {
+  background: #1877f2;
+}
+
+.potensi-detail-social-instagram {
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5851db,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d
+  );
+}
+
+.potensi-detail-social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  filter: brightness(1.1);
+}
+
+/* Tags */
+.potensi-detail-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.potensi-detail-tag {
+  display: inline-block;
+  padding: 0.375rem 0.875rem;
+  background: var(--bg-primary);
+  color: var(--primary-color);
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  border: 2px solid var(--light-gray);
+  transition: all var(--transition-base);
+}
+
+.potensi-detail-tag:hover {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* Action Buttons */
+.potensi-detail-action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--light-gray);
+}
+
+@media (min-width: 768px) {
+  .potensi-detail-action-buttons {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* Share Buttons */
+.potensi-detail-share-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.potensi-detail-share-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--light-gray);
+  background: white;
+  color: var(--gray-color);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  font-size: 1rem;
+}
+
+.potensi-detail-share-facebook:hover {
+  background: #1877f2;
+  border-color: #1877f2;
+  color: white;
+}
+
+.potensi-detail-share-twitter:hover {
+  background: #1da1f2;
+  border-color: #1da1f2;
+  color: white;
+}
+
+.potensi-detail-share-whatsapp:hover {
+  background: #25d366;
+  border-color: #25d366;
+  color: white;
+}
+
+.potensi-detail-share-email:hover {
+  background: #ea4335;
+  border-color: #ea4335;
+  color: white;
+}
+
+/* Sidebar */
+.potensi-detail-sidebar-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--light-gray);
+  transition: all var(--transition-base);
+}
+
+.potensi-detail-sidebar-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-lg);
+}
+
+.potensi-detail-sidebar-title {
+  font-size: 1.125rem;
+  color: var(--dark-color);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--light-gray);
+}
+
+/* Back Button */
+.potensi-detail-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Related List */
+.potensi-detail-related-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.potensi-detail-related-item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition-base);
+  border: 2px solid transparent;
+}
+
+.potensi-detail-related-item:hover {
+  background: var(--bg-primary);
+  border-color: var(--primary-color);
+  transform: translateX(4px);
+}
+
+.potensi-detail-related-image {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.potensi-detail-related-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-base);
+}
+
+.potensi-detail-related-item:hover .potensi-detail-related-image img {
+  transform: scale(1.1);
+}
+
+.potensi-detail-related-content {
+  flex: 1;
+}
+
+.potensi-detail-related-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.potensi-detail-related-rating {
+  margin-bottom: 0.25rem;
+}
+
+.potensi-detail-related-category {
+  font-size: 0.75rem;
+  color: var(--gray-color);
+  margin: 0;
+}
+
+/* Stats Grid */
+.potensi-detail-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.potensi-detail-stat-item {
+  text-align: center;
+  padding: 1rem;
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--light-gray);
+  transition: all var(--transition-base);
+}
+
+.potensi-detail-stat-item:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.potensi-detail-stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+}
+
+.potensi-detail-stat-label {
+  font-size: 0.75rem;
+  color: var(--gray-color);
+}
+
+/* Category Links */
+.potensi-detail-category-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.potensi-detail-category-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: var(--dark-color);
+  transition: all var(--transition-base);
+  border: 2px solid transparent;
+}
+
+.potensi-detail-category-link:hover {
+  background: white;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  transform: translateX(4px);
+}
+
+.potensi-detail-category-link svg {
+  font-size: 1rem;
+}
+
+/* Newsletter Section */
+.potensi-detail-newsletter-section {
+  background: var(--gradient-primary);
+  color: white;
+  padding: 4rem 0;
+  margin-top: 4rem;
+}
+
+.potensi-detail-newsletter-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.potensi-detail-newsletter-title {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.potensi-detail-newsletter-text {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.potensi-detail-newsletter-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.potensi-detail-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .potensi-detail-form-group {
+    flex-direction: row;
+  }
+}
+
+.potensi-detail-newsletter-input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 2px solid transparent;
+  font-size: 1rem;
+  transition: all var(--transition-base);
+}
+
+.potensi-detail-newsletter-input:focus {
+  outline: none;
+  border-color: white;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+/* Buttons */
+.potensi-detail-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  border: 2px solid transparent;
+  font-size: 1rem;
+}
+
+.potensi-detail-btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+.potensi-detail-btn-primary {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.potensi-detail-btn-primary:hover {
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.potensi-detail-btn-success {
+  background: var(--success-color);
+  color: white;
+  border-color: var(--success-color);
+}
+
+.potensi-detail-btn-success:hover {
+  background: #16a34a;
+  border-color: #16a34a;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.potensi-detail-btn-outline {
+  background: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.potensi-detail-btn-outline:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Utility Classes */
+.potensi-detail-py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.potensi-detail-py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.potensi-detail-py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Animations */
+@keyframes potensiFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes potensiPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .potensi-detail-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .potensi-detail-header-right {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .potensi-detail-gallery-main {
+    height: 300px;
+  }
+
+  .potensi-detail-description-content h2 {
+    font-size: 1.25rem;
+  }
+
+  .potensi-detail-description-content h3 {
+    font-size: 1.125rem;
+  }
+
+  .potensi-detail-facilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .potensi-detail-action-buttons {
+    flex-direction: column;
+  }
+
+  .potensi-detail-share-buttons {
+    justify-content: center;
+  }
+
+  .potensi-detail-related-item {
+    flex-direction: column;
+  }
+
+  .potensi-detail-related-image {
+    width: 100%;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .potensi-detail-quick-info {
+    grid-template-columns: 1fr;
+  }
+
+  .potensi-detail-thumbnail-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .potensi-detail-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .potensi-detail-contact-buttons {
+    flex-direction: column;
+  }
+
+  .potensi-detail-contact-buttons .potensi-detail-btn {
+    width: 100%;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .potensi-detail-empty-state,
+  .potensi-detail-sidebar-card,
+  .potensi-detail-description-section,
+  .potensi-detail-facilities-section,
+  .potensi-detail-info-section,
+  .potensi-detail-quick-info {
+    background: var(--bg-secondary);
+    border-color: var(--border-dark);
+  }
+
+  .potensi-detail-title,
+  .potensi-detail-section-title,
+  .potensi-detail-sidebar-title,
+  .potensi-detail-info-title,
+  .potensi-detail-related-title {
+    color: var(--dark-color);
+  }
+
+  .potensi-detail-info-item p,
+  .potensi-detail-description-content,
+  .potensi-detail-facility-item span,
+  .potensi-detail-related-category {
+    color: var(--gray-color);
+  }
+
+  .potensi-excellence-item,
+  .potensi-detail-facility-item,
+  .potensi-detail-stat-item,
+  .potensi-detail-category-link {
+    background: var(--bg-tertiary);
+    border-color: var(--border-dark);
+  }
+
+  .potensi-detail-bookmark-btn,
+  .potensi-detail-share-btn {
+    background: var(--bg-tertiary);
+    border-color: var(--border-dark);
+    color: var(--gray-color);
+  }
+
+  .potensi-detail-bookmark-btn:hover,
+  .potensi-detail-share-btn:hover {
+    background: var(--primary-color);
+    color: white;
+  }
+
+  .potensi-detail-share-btn {
+    background: var(--bg-tertiary);
+    color: var(--gray-color);
+  }
+
+  .potensi-alert-success {
+    background: rgba(34, 197, 94, 0.05);
+    color: #86efac;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .potensi-detail-wrapper {
+    background: white !important;
+  }
+
+  .potensi-detail-newsletter-section,
+  .potensi-detail-sidebar,
+  .potensi-detail-header-right,
+  .potensi-detail-image-overlay,
+  .potensi-detail-thumbnail-grid,
+  .potensi-detail-action-buttons,
+  .potensi-detail-back-btn {
+    display: none !important;
+  }
+
+  .potensi-detail-description-content {
+    font-size: 12pt !important;
+    line-height: 1.6 !important;
+  }
+
+  .potensi-detail-title {
+    font-size: 16pt !important;
+    color: black !important;
+  }
+
+  .potensi-detail-gallery-main {
+    max-height: 300px !important;
+  }
+
+  .potensi-detail-section-title {
+    color: black !important;
+    border-color: #ccc !important;
+  }
+}

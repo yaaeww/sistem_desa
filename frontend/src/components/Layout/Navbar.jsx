@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // Tambahkan useNavigate
 import { FaHome, FaBell, FaUserCircle, FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState("");
+  const [userRole, setUserRole] = useState(""); // Tambahkan state untuk role
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false); // Tambahkan state untuk dropdown
+
+  const navigate = useNavigate();
 
   useEffect(() => {
-    setIsLoggedIn(localStorage.getItem("isLoggedIn") === "true");
+    const loggedIn = localStorage.getItem("isLoggedIn") === "true";
+    setIsLoggedIn(loggedIn);
     setUserName(localStorage.getItem("userName") || "Warga Desa");
+    setUserRole(localStorage.getItem("userRole") || "");
 
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -23,7 +29,25 @@ const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("userName");
+    localStorage.removeItem("userRole");
+    setShowDropdown(false);
+    setIsMobileMenuOpen(false);
+    navigate("/");
     window.location.reload();
+  };
+
+  // Tentukan dashboard berdasarkan role
+  const getDashboardPath = () => {
+    switch (userRole) {
+      case "admin":
+        return "/admin";
+      case "staff":
+        return "/staff";
+      case "warga":
+        return "/warga";
+      default:
+        return "/login";
+    }
   };
 
   return (
@@ -31,8 +55,20 @@ const Navbar = () => {
       <div className="container">
         <div className="navbar-brand">
           <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
-            <FaHome className="logo-icon" />
-            <span>Desa Bojongslawi</span>
+            {/* Logo Desa dengan gambar */}
+            <div className="logo-container">
+              <img
+                src="/logodesa.png"
+                alt="Logo Desa Bojongslawi"
+                className="desa-logo"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+              <div className="brand-text">
+                <span className="brand-title">Bojongslawi</span>
+              </div>
+            </div>
           </Link>
         </div>
 
@@ -89,22 +125,42 @@ const Navbar = () => {
                 <FaBell />
                 <span className="badge">3</span>
               </button>
-              <div className="user-dropdown">
-                <button className="user-btn">
+              <div className="user-dropdown-wrapper">
+                <button
+                  className="user-btn"
+                  onClick={() => setShowDropdown(!showDropdown)}
+                >
                   <FaUserCircle />
                   <span>{userName}</span>
                 </button>
-                <div className="dropdown-menu">
-                  <Link to="/dashboard" className="dropdown-item">
-                    Dashboard
-                  </Link>
-                  <Link to="/profile" className="dropdown-item">
-                    Profil
-                  </Link>
-                  <button className="dropdown-item" onClick={handleLogout}>
-                    Keluar
-                  </button>
-                </div>
+
+                {showDropdown && (
+                  <div className="dropdown-menu">
+                    <Link
+                      to={getDashboardPath()}
+                      className="dropdown-item"
+                      onClick={() => {
+                        setShowDropdown(false);
+                        setIsMobileMenuOpen(false);
+                      }}
+                    >
+                      Dashboard
+                    </Link>
+                    <Link
+                      to="/profile"
+                      className="dropdown-item"
+                      onClick={() => {
+                        setShowDropdown(false);
+                        setIsMobileMenuOpen(false);
+                      }}
+                    >
+                      Profil
+                    </Link>
+                    <button className="dropdown-item" onClick={handleLogout}>
+                      Keluar
+                    </button>
+                  </div>
+                )}
               </div>
             </>
           ) : (
@@ -118,6 +174,14 @@ const Navbar = () => {
             </>
           )}
         </div>
+
+        {/* Overlay untuk menutup dropdown saat klik di luar */}
+        {showDropdown && (
+          <div
+            className="dropdown-overlay"
+            onClick={() => setShowDropdown(false)}
+          />
+        )}
       </div>
     </nav>
   );

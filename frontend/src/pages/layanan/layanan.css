@@ -1,0 +1,2258 @@
+/* ===== LAYANAN PAGE STYLES - TIDAK BENTROK DENGAN GLOBAL ===== */
+.layanan-page-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+}
+
+/* Hero Section Layanan */
+.layanan-hero-section {
+  background: var(--gradient-hero);
+  color: white;
+  padding: 4rem 0 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.layanan-hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-overlay);
+  z-index: 1;
+}
+
+.layanan-hero-section::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(to top, var(--bg-primary), transparent);
+  z-index: 2;
+}
+
+.layanan-hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.layanan-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: layananFadeInDown 0.8s ease-out;
+}
+
+.layanan-hero-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  color: white;
+  animation: layananFadeInUp 0.8s ease-out 0.2s both;
+}
+
+.layanan-hero-title .highlight {
+  color: var(--accent-light);
+}
+
+.layanan-hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: layananFadeInUp 0.8s ease-out 0.4s both;
+}
+
+.layanan-hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: layananFadeInUp 0.8s ease-out 0.6s both;
+}
+
+/* Filter Section */
+.layanan-filter-section {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 2rem;
+  border: 2px solid var(--light-gray);
+  transition: all var(--transition-base);
+}
+
+@media (min-width: 768px) {
+  .layanan-filter-section {
+    padding: 2rem;
+  }
+}
+
+.layanan-filter-section:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.layanan-filter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.layanan-filter-header .layanan-section-title {
+  font-size: 1.5rem;
+  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.layanan-filter-header .layanan-section-subtitle {
+  color: var(--gray-color);
+  font-size: 0.95rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.layanan-filter-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .layanan-filter-controls {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.layanan-search-box {
+  flex: 1;
+  position: relative;
+}
+
+.layanan-search-box .layanan-search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-color);
+  font-size: 1.125rem;
+}
+
+.layanan-search-input {
+  width: 100%;
+  padding: 0.875rem 1rem 0.875rem 2.75rem;
+  border: 2px solid var(--light-gray);
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  transition: all var(--transition-base);
+  background: var(--bg-secondary);
+}
+
+.layanan-search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.1);
+}
+
+.layanan-filter-options {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.layanan-sort-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.layanan-sort-option label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--dark-color);
+  font-size: 0.95rem;
+}
+
+.layanan-sort-option select {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--light-gray);
+  border-radius: var(--radius-lg);
+  background: white;
+  color: var(--dark-color);
+  font-size: 0.95rem;
+  cursor: pointer;
+  min-width: 160px;
+  transition: all var(--transition-base);
+}
+
+.layanan-sort-option select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1);
+}
+
+/* Category Filters */
+.layanan-category-filters {
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.layanan-category-list-horizontal {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+@media (min-width: 640px) {
+  .layanan-category-list-horizontal {
+    gap: 0.75rem;
+  }
+}
+
+.layanan-category-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  background: var(--bg-secondary);
+  border: 2px solid var(--light-gray);
+  border-radius: var(--radius-full);
+  color: var(--dark-color);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.layanan-category-filter-btn:hover {
+  background: var(--bg-accent);
+  border-color: var(--primary-color);
+}
+
+.layanan-category-filter-btn.active {
+  background: var(--gradient-primary);
+  color: white;
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-md), var(--shadow-glow);
+}
+
+.layanan-category-count {
+  background: var(--light-gray);
+  color: var(--gray-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all var(--transition-base);
+}
+
+.layanan-category-filter-btn.active .layanan-category-count {
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+/* Layanan Grid */
+.layanan-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 640px) {
+  .layanan-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .layanan-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Layanan Card */
+.layanan-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--light-gray);
+  overflow: hidden;
+  transition: all var(--transition-base);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.layanan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary-color);
+}
+
+.layanan-card-header {
+  position: relative;
+  padding: 1.5rem 1.25rem 1rem;
+  background: var(--gradient-light);
+  border-bottom: 2px solid var(--light-gray);
+}
+
+.layanan-card-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  transition: all var(--transition-base);
+}
+
+.layanan-card:hover .layanan-card-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.layanan-card-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  padding: 0.375rem 0.75rem;
+  background: rgba(15, 118, 110, 0.1);
+  color: var(--primary-color);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(15, 118, 110, 0.2);
+}
+
+.layanan-popular-badge {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 1rem;
+  background: var(--gradient-primary);
+  color: white;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-glow);
+}
+
+.layanan-card-content {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.layanan-card-title {
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+  color: var(--dark-color);
+  line-height: 1.4;
+}
+
+.layanan-card-description {
+  color: var(--gray-color);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.layanan-card-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  background: var(--bg-accent);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--light-gray);
+}
+
+.layanan-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.layanan-detail-item svg {
+  color: var(--primary-color);
+  font-size: 0.875rem;
+}
+
+.layanan-text-success {
+  color: var(--success-color);
+  font-weight: 600;
+}
+
+.layanan-persyaratan-section {
+  margin-bottom: 1.5rem;
+}
+
+.layanan-persyaratan-section h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: var(--dark-color);
+}
+
+.layanan-persyaratan-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.layanan-persyaratan-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.625rem 0;
+  color: var(--gray-color);
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.layanan-persyaratan-list li:last-child {
+  border-bottom: none;
+}
+
+.layanan-persyaratan-list li svg {
+  color: var(--primary-color);
+  font-size: 0.875rem;
+  margin-top: 0.125rem;
+  flex-shrink: 0;
+}
+
+.layanan-card-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.layanan-card-actions .btn {
+  flex: 1;
+  justify-content: center;
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+}
+
+/* Info Section */
+.layanan-info-section {
+  margin-top: 3rem;
+}
+
+.layanan-info-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--light-gray);
+  transition: all var(--transition-base);
+}
+
+@media (min-width: 768px) {
+  .layanan-info-card {
+    padding: 2rem;
+  }
+}
+
+.layanan-info-card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.layanan-info-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--dark-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.layanan-info-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .layanan-info-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .layanan-info-steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.layanan-step {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.layanan-step-number {
+  width: 40px;
+  height: 40px;
+  background: var(--gradient-primary);
+  color: white;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-glow);
+}
+
+.layanan-step-content h4 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--dark-color);
+}
+
+.layanan-step-content p {
+  color: var(--gray-color);
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* ===== DETAIL LAYANAN PAGE STYLES ===== */
+
+/* Breadcrumb */
+.layanan-breadcrumb-section {
+  background: var(--bg-secondary);
+  padding: 1rem 0;
+  border-bottom: 2px solid var(--light-gray);
+}
+
+.layanan-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  font-size: 0.875rem;
+  overflow-x: auto;
+}
+
+.layanan-breadcrumb-item {
+  color: var(--gray-color);
+  text-decoration: none;
+  transition: color var(--transition-base);
+  white-space: nowrap;
+}
+
+.layanan-breadcrumb-item:hover {
+  color: var(--primary-color);
+}
+
+.layanan-breadcrumb-item.active {
+  color: var(--dark-color);
+  font-weight: 600;
+}
+
+.layanan-breadcrumb-separator {
+  color: var(--light-gray);
+}
+
+/* Detail Header */
+.layanan-detail-header {
+  margin-bottom: 2rem;
+}
+
+.layanan-header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.layanan-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--transition-base);
+  align-self: flex-start;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid var(--light-gray);
+  border-radius: var(--radius-lg);
+  background: var(--bg-secondary);
+  font-size: 0.9rem;
+}
+
+.layanan-back-btn:hover {
+  color: var(--secondary-color);
+  border-color: var(--primary-color);
+  background: var(--bg-accent);
+}
+
+.layanan-header-title {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 768px) {
+  .layanan-header-title {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
+
+.layanan-icon-large {
+  width: 70px;
+  height: 70px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-glow);
+}
+
+@media (min-width: 768px) {
+  .layanan-icon-large {
+    width: 80px;
+    height: 80px;
+    font-size: 2.5rem;
+  }
+}
+
+.layanan-detail-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 0.5rem;
+  color: var(--dark-color);
+  line-height: 1.3;
+}
+
+.layanan-detail-subtitle {
+  color: var(--gray-color);
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.layanan-header-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.layanan-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--bg-secondary);
+  border: 2px solid var(--light-gray);
+  border-radius: var(--radius-lg);
+  color: var(--dark-color);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  border: none;
+  font-size: 0.875rem;
+}
+
+.layanan-action-btn:hover {
+  background: var(--bg-accent);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* Main Content Layout */
+.layanan-detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .layanan-detail-content {
+    flex-direction: row;
+  }
+}
+
+/* Content Main */
+.layanan-content-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.layanan-detail-section {
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--light-gray);
+  padding: 1.5rem;
+  transition: all var(--transition-base);
+}
+
+@media (min-width: 768px) {
+  .layanan-detail-section {
+    padding: 2rem;
+  }
+}
+
+.layanan-detail-section:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-lg);
+}
+
+.layanan-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  color: var(--dark-color);
+  margin-bottom: 1.5rem;
+}
+
+.layanan-section-title svg {
+  color: var(--primary-color);
+  font-size: 1.125rem;
+}
+
+.layanan-section-content {
+  color: var(--gray-color);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.layanan-section-content p {
+  margin-bottom: 1rem;
+}
+
+/* Info Cards */
+.layanan-info-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .layanan-info-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.layanan-info-card-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-accent);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--light-gray);
+  transition: all var(--transition-base);
+}
+
+.layanan-info-card-item:hover {
+  border-color: var(--primary-color);
+}
+
+.layanan-info-icon {
+  width: 45px;
+  height: 45px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.layanan-info-text h4 {
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+  color: var(--dark-color);
+}
+
+.layanan-info-text p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Benefit List */
+.layanan-benefit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.layanan-benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.875rem;
+  background: var(--bg-accent);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--success-color);
+  transition: all var(--transition-base);
+}
+
+.layanan-benefit-item:hover {
+  transform: translateX(3px);
+}
+
+.layanan-benefit-item svg {
+  color: var(--success-color);
+  font-size: 1.125rem;
+  margin-top: 0.125rem;
+  flex-shrink: 0;
+}
+
+.layanan-benefit-item span {
+  flex: 1;
+  color: var(--dark-color);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Procedure Steps */
+.layanan-procedure-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.layanan-procedure-step {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--light-gray);
+  transition: all var(--transition-base);
+  align-items: flex-start;
+}
+
+.layanan-procedure-step:hover {
+  border-color: var(--primary-color);
+}
+
+.layanan-step-number {
+  width: 40px;
+  height: 40px;
+  background: var(--gradient-primary);
+  color: white;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-glow);
+}
+
+.layanan-step-content {
+  flex: 1;
+}
+
+.layanan-step-content h4 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--dark-color);
+}
+
+.layanan-step-content p {
+  margin: 0;
+  color: var(--gray-color);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Note Section */
+.layanan-note-section {
+  background: var(--bg-accent);
+}
+
+.layanan-note-section .layanan-section-content {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  border-left: 4px solid var(--warning-color);
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.layanan-note-card p {
+  margin: 0;
+  color: var(--dark-color);
+}
+
+/* Sidebar */
+.layanan-content-sidebar {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .layanan-content-sidebar {
+    width: 320px;
+    flex-shrink: 0;
+  }
+}
+
+.layanan-sidebar-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--light-gray);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: all var(--transition-base);
+}
+
+.layanan-sidebar-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-lg);
+}
+
+.layanan-sidebar-title {
+  font-size: 1.125rem;
+  color: var(--dark-color);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--light-gray);
+}
+
+.layanan-sidebar-title svg {
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+/* Requirement List */
+.layanan-requirement-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.layanan-requirement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: var(--bg-accent);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+}
+
+.layanan-requirement-item:hover {
+  background: white;
+  border: 2px solid var(--primary-color);
+}
+
+.layanan-requirement-item svg {
+  color: var(--success-color);
+  font-size: 1rem;
+  margin-top: 0.125rem;
+  flex-shrink: 0;
+}
+
+.layanan-requirement-item span {
+  flex: 1;
+  color: var(--dark-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Contact Info */
+.layanan-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.layanan-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-accent);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+}
+
+.layanan-contact-item:hover {
+  background: white;
+  border: 2px solid var(--primary-color);
+}
+
+.layanan-contact-item svg {
+  color: var(--primary-color);
+  font-size: 1.25rem;
+  margin-top: 0.125rem;
+  flex-shrink: 0;
+}
+
+.layanan-contact-item div {
+  flex: 1;
+}
+
+.layanan-contact-item strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--dark-color);
+  margin-bottom: 0.25rem;
+}
+
+.layanan-contact-item p {
+  margin: 0;
+  color: var(--gray-color);
+  font-size: 0.9rem;
+}
+
+/* Action Buttons */
+.layanan-action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.layanan-action-buttons .btn {
+  justify-content: center;
+  padding: 0.875rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* Hours Info */
+.layanan-hours-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.layanan-hour-item {
+  padding: 1rem;
+  background: var(--bg-accent);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+}
+
+.layanan-hour-item:hover {
+  background: white;
+  border: 2px solid var(--primary-color);
+}
+
+.layanan-hour-item strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--dark-color);
+  margin-bottom: 0.25rem;
+}
+
+.layanan-hour-item p {
+  margin: 0;
+  color: var(--gray-color);
+  font-size: 0.9rem;
+}
+
+/* Related Services */
+.layanan-related-services {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--light-gray);
+}
+
+.layanan-related-services .layanan-section-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.layanan-related-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .layanan-related-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .layanan-related-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.layanan-related-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--light-gray);
+  transition: all var(--transition-base);
+  text-decoration: none;
+  color: inherit;
+}
+
+.layanan-related-card:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.layanan-related-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-glow);
+}
+
+.layanan-related-content {
+  flex: 1;
+}
+
+.layanan-related-content h4 {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+  color: var(--dark-color);
+  line-height: 1.4;
+}
+
+.layanan-related-content p {
+  color: var(--gray-color);
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.layanan-related-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all var(--transition-base);
+}
+
+.layanan-related-link:hover {
+  color: var(--secondary-color);
+  gap: 0.625rem;
+}
+
+.layanan-rotate-180 {
+  transform: rotate(180deg);
+}
+
+/* Not Found */
+.layanan-not-found {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--light-gray);
+}
+
+.layanan-not-found h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark-color);
+}
+
+.layanan-not-found p {
+  color: var(--gray-color);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.layanan-not-found .btn {
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+}
+
+/* Loading State */
+.layanan-loading-detail {
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--light-gray);
+  overflow: hidden;
+  animation: layananPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.layanan-loading-header {
+  height: 200px;
+  background: var(--gradient-light);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+@media (min-width: 768px) {
+  .layanan-loading-header {
+    height: 250px;
+  }
+}
+
+.layanan-loading-content {
+  padding: 2rem;
+}
+
+@media (min-width: 768px) {
+  .layanan-loading-content {
+    padding: 2.5rem;
+  }
+}
+
+.layanan-loading-section {
+  height: 100px;
+  background: var(--gradient-light);
+  border-radius: var(--radius-lg);
+  margin-bottom: 1.5rem;
+  animation: layananPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.layanan-loading-section:last-child {
+  height: 150px;
+}
+
+/* Utility Classes */
+.layanan-mr-2 {
+  margin-right: 0.5rem;
+}
+
+.layanan-mt-12 {
+  margin-top: 3rem;
+}
+
+.layanan-mb-8 {
+  margin-bottom: 2rem;
+}
+
+.layanan-btn-block {
+  width: 100%;
+}
+
+/* Animations */
+@keyframes layananFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes layananFadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes layananPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .layanan-card-actions {
+    flex-direction: column;
+  }
+
+  .layanan-action-btn {
+    flex: 1;
+    justify-content: center;
+    min-width: 140px;
+  }
+
+  .layanan-detail-content {
+    margin-bottom: 2rem;
+  }
+
+  .layanan-content-main {
+    gap: 1.5rem;
+  }
+
+  .layanan-detail-section {
+    padding: 1.25rem;
+  }
+
+  .layanan-section-title {
+    font-size: 1.125rem;
+  }
+
+  .layanan-info-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .layanan-detail-title {
+    font-size: 1.375rem;
+  }
+
+  .layanan-detail-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .layanan-icon-large {
+    width: 60px;
+    height: 60px;
+    font-size: 1.75rem;
+  }
+
+  .layanan-related-services {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+
+  .layanan-not-found {
+    padding: 2rem 1rem;
+  }
+}
+
+/* ===== DETAIL LAYANAN PAGE STYLES ===== */
+.layanan-detail-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+}
+
+.layanan-detail-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Loading States */
+.layanan-detail-loading {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  animation: layananFadeIn 0.3s ease;
+}
+
+.layanan-detail-loading-header {
+  height: 120px;
+  background: var(--light-gray);
+  border-radius: var(--radius-xl);
+  animation: layananPulse 2s infinite;
+}
+
+.layanan-detail-loading-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.layanan-detail-loading-section {
+  height: 200px;
+  background: var(--light-gray);
+  border-radius: var(--radius-xl);
+  animation: layananPulse 2s infinite 0.2s;
+}
+
+/* Not Found State */
+.layanan-detail-not-found {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--light-gray);
+}
+
+.layanan-detail-not-found-title {
+  font-size: 1.5rem;
+  color: var(--dark-color);
+  margin-bottom: 1rem;
+}
+
+.layanan-detail-not-found-text {
+  color: var(--gray-color);
+  margin-bottom: 2rem;
+}
+
+/* Breadcrumb */
+.layanan-detail-breadcrumb-section {
+  background: white;
+  padding: 1rem 0;
+  border-bottom: 2px solid var(--light-gray);
+}
+
+.layanan-detail-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.layanan-detail-breadcrumb-item {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.layanan-detail-breadcrumb-item:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+.layanan-detail-breadcrumb-separator {
+  color: var(--gray-color);
+}
+
+.layanan-detail-breadcrumb-active {
+  color: var(--gray-color);
+  pointer-events: none;
+}
+
+/* Header Section */
+.layanan-detail-header {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--light-gray);
+}
+
+.layanan-detail-header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .layanan-detail-header-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.layanan-detail-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--bg-secondary);
+  border: 2px solid var(--light-gray);
+  border-radius: var(--radius-lg);
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--transition-base);
+  align-self: flex-start;
+}
+
+.layanan-detail-back-btn:hover {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.layanan-detail-header-title {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.layanan-detail-icon-large {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  color: white;
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.layanan-detail-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.layanan-detail-subtitle {
+  color: var(--gray-color);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.layanan-detail-header-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-self: flex-start;
+}
+
+.layanan-detail-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: white;
+  border: 2px solid var(--light-gray);
+  border-radius: var(--radius-lg);
+  color: var(--gray-color);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.layanan-detail-action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* Main Content Layout */
+.layanan-detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .layanan-detail-content {
+    flex-direction: row;
+  }
+}
+
+.layanan-detail-content-main {
+  flex: 1;
+}
+
+.layanan-detail-content-sidebar {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .layanan-detail-content-sidebar {
+    width: 350px;
+    flex-shrink: 0;
+  }
+}
+
+/* Sections */
+.layanan-detail-section {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--light-gray);
+  transition: all var(--transition-base);
+}
+
+.layanan-detail-section:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-lg);
+}
+
+.layanan-detail-section-title {
+  font-size: 1.25rem;
+  color: var(--dark-color);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--light-gray);
+}
+
+.layanan-detail-section-content {
+  color: var(--dark-color);
+  line-height: 1.8;
+}
+
+/* Info Cards */
+.layanan-detail-info-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .layanan-detail-info-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.layanan-detail-info-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--light-gray);
+  transition: all var(--transition-base);
+}
+
+.layanan-detail-info-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
+}
+
+.layanan-detail-info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  color: white;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.layanan-detail-info-text h4 {
+  font-size: 0.95rem;
+  color: var(--gray-color);
+  margin-bottom: 0.25rem;
+}
+
+.layanan-detail-info-text p {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--dark-color);
+  margin: 0;
+}
+
+/* Benefit List */
+.layanan-detail-benefit-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-left: 1rem;
+}
+
+.layanan-detail-benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: var(--dark-color);
+}
+
+.layanan-detail-benefit-item svg {
+  color: var(--success-color);
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+/* Procedure Steps */
+.layanan-detail-procedure-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.layanan-detail-procedure-step {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: var(--bg-primary);
+  border-radius: var(--radius-xl);
+  border: 2px solid var(--light-gray);
+  transition: all var(--transition-base);
+}
+
+.layanan-detail-procedure-step:hover {
+  border-color: var(--primary-color);
+  transform: translateX(4px);
+}
+
+.layanan-detail-step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--gradient-primary);
+  color: white;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  flex-shrink: 0;
+  font-size: 1.125rem;
+}
+
+.layanan-detail-step-content {
+  flex: 1;
+}
+
+.layanan-detail-step-content h4 {
+  font-size: 1rem;
+  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+}
+
+.layanan-detail-step-content p {
+  color: var(--gray-color);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Note Section */
+.layanan-detail-note-section {
+  background: rgba(251, 191, 36, 0.1);
+  border-color: rgba(251, 191, 36, 0.2);
+}
+
+.layanan-detail-note-card {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid #f59e0b;
+}
+
+.layanan-detail-note-card p {
+  color: #92400e;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Sidebar Cards */
+.layanan-detail-sidebar-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--light-gray);
+  transition: all var(--transition-base);
+}
+
+.layanan-detail-sidebar-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-lg);
+}
+
+.layanan-detail-sidebar-title {
+  font-size: 1.125rem;
+  color: var(--dark-color);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--light-gray);
+}
+
+/* Requirement List */
+.layanan-detail-requirement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.layanan-detail-requirement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: var(--dark-color);
+}
+
+.layanan-detail-requirement-item svg {
+  color: var(--success-color);
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+/* Contact Info */
+.layanan-detail-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.layanan-detail-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+}
+
+.layanan-detail-contact-item svg {
+  color: var(--primary-color);
+  font-size: 1.25rem;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.layanan-detail-contact-item strong {
+  display: block;
+  color: var(--dark-color);
+  margin-bottom: 0.25rem;
+}
+
+.layanan-detail-contact-item p {
+  color: var(--gray-color);
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+/* Action Buttons */
+.layanan-detail-action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Hours Info */
+.layanan-detail-hours-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.layanan-detail-hour-item {
+  padding: 1rem;
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+}
+
+.layanan-detail-hour-item strong {
+  display: block;
+  color: var(--dark-color);
+  margin-bottom: 0.25rem;
+}
+
+.layanan-detail-hour-item p {
+  color: var(--gray-color);
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+/* Related Services */
+.layanan-detail-related-services {
+  margin-top: 3rem;
+}
+
+.layanan-detail-related-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .layanan-detail-related-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.layanan-detail-related-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--light-gray);
+  transition: all var(--transition-base);
+}
+
+.layanan-detail-related-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary-color);
+}
+
+.layanan-detail-related-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.layanan-detail-related-content h4 {
+  font-size: 1.125rem;
+  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+}
+
+.layanan-detail-related-content p {
+  color: var(--gray-color);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.layanan-detail-related-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: gap var(--transition-base);
+}
+
+.layanan-detail-related-link:hover {
+  gap: 0.75rem;
+  text-decoration: underline;
+}
+
+.layanan-detail-rotate-180 {
+  transform: rotate(180deg);
+}
+
+/* Buttons */
+.layanan-detail-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  border: 2px solid transparent;
+  font-size: 1rem;
+}
+
+.layanan-detail-btn-block {
+  width: 100%;
+}
+
+.layanan-detail-btn-primary {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.layanan-detail-btn-primary:hover {
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.layanan-detail-btn-secondary {
+  background: var(--gray-color);
+  color: white;
+  border-color: var(--gray-color);
+}
+
+.layanan-detail-btn-secondary:hover {
+  background: var(--dark-color);
+  border-color: var(--dark-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.layanan-detail-btn-outline {
+  background: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.layanan-detail-btn-outline:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Utility Classes */
+.layanan-detail-py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.layanan-detail-py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.layanan-detail-text-success {
+  color: var(--success-color) !important;
+}
+
+/* Animations */
+@keyframes layananFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes layananPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .layanan-detail-header-title {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .layanan-detail-info-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .layanan-detail-procedure-step {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .layanan-detail-step-number {
+    align-self: center;
+  }
+  
+  .layanan-detail-related-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .layanan-detail-sidebar-card {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .layanan-detail-header {
+    padding: 1.5rem;
+  }
+  
+  .layanan-detail-header-actions {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .layanan-detail-action-btn {
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .layanan-detail-section {
+    padding: 1.5rem;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .layanan-detail-breadcrumb-section,
+  .layanan-detail-header,
+  .layanan-detail-section,
+  .layanan-detail-sidebar-card,
+  .layanan-detail-related-card,
+  .layanan-detail-not-found {
+    background: var(--bg-secondary);
+    border-color: var(--border-dark);
+  }
+  
+  .layanan-detail-title,
+  .layanan-detail-section-title,
+  .layanan-detail-sidebar-title,
+  .layanan-detail-info-text p,
+  .layanan-detail-step-content h4,
+  .layanan-detail-related-content h4 {
+    color: var(--dark-color);
+  }
+  
+  .layanan-detail-subtitle,
+  .layanan-detail-section-content,
+  .layanan-detail-info-text h4,
+  .layanan-detail-step-content p,
+  .layanan-detail-related-content p,
+  .layanan-detail-contact-item p,
+  .layanan-detail-hour-item p {
+    color: var(--gray-color);
+  }
+  
+  .layanan-detail-info-card,
+  .layanan-detail-procedure-step,
+  .layanan-detail-contact-item,
+  .layanan-detail-hour-item {
+    background: var(--bg-tertiary);
+    border-color: var(--border-dark);
+  }
+  
+  .layanan-detail-back-btn,
+  .layanan-detail-action-btn {
+    background: var(--bg-tertiary);
+    border-color: var(--border-dark);
+    color: var(--gray-color);
+  }
+  
+  .layanan-detail-back-btn:hover,
+  .layanan-detail-action-btn:hover {
+    background: var(--primary-color);
+    color: white;
+  }
+  
+  .layanan-detail-note-section {
+    background: rgba(251, 191, 36, 0.05);
+    border-color: rgba(251, 191, 36, 0.1);
+  }
+  
+  .layanan-detail-note-card {
+    background: rgba(31, 41, 55, 0.3);
+  }
+  
+  .layanan-detail-note-card p {
+    color: #fef3c7;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .layanan-detail-wrapper {
+    background: white !important;
+  }
+  
+  .layanan-detail-breadcrumb-section,
+  .layanan-detail-header-actions,
+  .layanan-detail-content-sidebar,
+  .layanan-detail-related-services {
+    display: none !important;
+  }
+  
+  .layanan-detail-header {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+    page-break-inside: avoid;
+  }
+  
+  .layanan-detail-section {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+    margin-bottom: 2rem !important;
+    page-break-inside: avoid;
+  }
+  
+  .layanan-detail-title {
+    color: black !important;
+  }
+  
+  .layanan-detail-subtitle {
+    color: #666 !important;
+  }
+}
